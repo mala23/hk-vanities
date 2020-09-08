@@ -24,18 +24,17 @@ const NavStyles = styled.ul`
     }
     &:before {
       content: '';
-      width: 2px;
+      width: 0px;
       background: ${props => props.theme.lightgrey};
       height: 100%;
       left: 0;
       position: absolute;
-      transform: skew(-20deg);
       top: 0;
       bottom: 0;
     }
     &:after {
       height: 2px;
-      background: red;
+      background: ${props => props.theme.yellow};
       content: '';
       width: 0;
       position: absolute;
@@ -57,7 +56,6 @@ const NavStyles = styled.ul`
     }
   }
   @media (max-width: 1300px) {
-    border-top: 1px solid ${props => props.theme.lightgrey};
     width: 100%;
     justify-content: center;
     font-size: 1.5rem;
