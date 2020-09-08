@@ -1,17 +1,20 @@
 import React, { Component } from 'react'
 import Header from '../header/'
-import Meta from '../meta/'
+import Nav from '../nav/'
 import styled from 'styled-components'
-import Styles from '../page/'
+
+const StyledPage = styled.div`
+  background: white;
+`
 
 class Page extends Component {
 	render() {
 		return (
-			<Page>
-				<Meta />
-				<Header />
+			<StyledPage>
+        <Header />
+        <Nav />
 				{this.props.children}
-			</Page>
+			</StyledPage>
 		)
 	}
 }
