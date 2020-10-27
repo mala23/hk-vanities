@@ -15,50 +15,41 @@ Router.onRouteChangeError = () => {
 }
 
 const Logo = styled.h1`
-	font-size: 3rem;
-	margin-left: 1rem;
-	margin-top: 2rem;
-	margin-bottom: 4rem;
-	position: relative;
-	z-indexd: 2;
+
+  header__Logo {
+    margin: 0;
+    background-color: salmon;
+  }
 
 	a {
-		font-family: 'Charles Wright Bold', sans-serif;
-		color: ${props => props.theme.black};
-		text-decoration: none;
-		text-transform: uppercase;
-		padding: 1rem;
-		border: .6rem solid ${props => props.theme.black};
-		border-radius: .6rem;
-		background: ${props => props.theme.yellow};
-	}
-
-	@media (max-width: 1300px) {
-		margin: 2rem 0;
-		text-align: center;
+    font-family: 'kunst grotesk', 'arial', sans-serif;
+    font-size: 2rem;
+    margin: 0;
 	}
 `
 
 
 const StyledHeader = styled.header`
-	.bar {
-		display: grid;
-		grid-template-columns: auto 1fr;
-		justify-content: space-between;
-		align-items: stretch;
-
-		@media (max-width: 1300px) {
-			grid-template-columns: 1fr;
-			justify-content: center;
-		}
+  .bar {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 1rem .5rem;
+    vertical-align: center;
 	}
 
-	.sub-bar {
-		display: grid;
-		display: none;
-		grid-template-columns: 1fr auto;
-		border-bottom: 1px solid ${props => props.theme.lightgrey};
-	}
+  .nav-toggle {
+    font-size: 2rem;
+    letter-spacing: 3px;
+    padding: .05rem 1.1rem .5rem 1.1rem;
+    background-color: lightgrey;
+    border-radius: 10px;
+  }
+
+  .top-nav {
+    display: none;
+    font-family: 'kunst grotesk', 'arial', sans-serif;
+  }
 `
 
 const Header = () => (
@@ -66,14 +57,18 @@ const Header = () => (
 		<div className="bar">
 			<Logo>
 				<Link href="/">
-					<a>Hon6 Kon6 Vani7ies</a>
+					<a>HK Vanities</a>
 				</Link>
 			</Logo>
-			<Nav />
-		</div>
-		<div className="sub-bar">
-			<p>Search</p>
-		</div>
+      <div><a className="nav-toggle" href="#">...</a></div>
+      <nav className="top-nav">
+        <ul>
+          <li><a href="/create">Create your Poem</a></li>
+          <li><a href="/poems">Poems</a></li>
+          <li><a href="/follow">Follow</a></li>
+        </ul>
+      </nav>
+    </div>
 	</StyledHeader>
 )
 

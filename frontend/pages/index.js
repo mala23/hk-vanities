@@ -1,10 +1,5 @@
-import React from 'react'
-import Link from 'next/link'
-
-	const Home = props => (
-		<div>
-			<p>Hello World</p>
-		</div>
-	)
+const Home = props => (
+  <div>hello</div>
+)
 
 export default Home

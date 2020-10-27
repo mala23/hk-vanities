@@ -22,7 +22,6 @@ const StyledPage = styled.div`
 const Inner = styled.div`
 	max-width: ${props => props.theme.maxWidth};
 	margin: 0 auto;
-	padding: 2rem;
 `
 
 injectGlobal`
@@ -50,7 +49,7 @@ injectGlobal`
 	}
 	body {
 		padding: 0;
-		margin: 0;
+		margin: 0 .5rem;
 		font-family: 'Open Sans Regular', sans-serif;
 		font-size: 1.5rem;
 		line-height: 2;
