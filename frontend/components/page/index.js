@@ -26,8 +26,20 @@ const Inner = styled.div`
 
 injectGlobal`
   @font-face {
-    font-family: 'radnika_next';
-    src: url('/static/radnikanext-medium-webfont.woff2') format('woff2');
+    font-family: 'KunstGrotesk-Regular';
+    src: url('/static/fonts/KunstGrotesk-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'HKVPlatesBlack-Regular';
+    src: url('/static/fonts/HKVPlatesBlack-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'HKVPlatesWhite-Regular';
+    src: url('/static/fonts/HKVPlatesWhite-Regular.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
   }
@@ -43,14 +55,13 @@ injectGlobal`
     margin: 0;
     font-size: 1.5rem;
     line-height: 2;
-    font-family: 'radnika_next';
+    font-family: 'KunstGrotesk-Regular';
   }
   a {
     text-decoration: none;
     color: ${theme.black};
   }
-  button {  font-family: 'radnika_next'; }
-`;
+`
 
 class Page extends Component {
   render() {

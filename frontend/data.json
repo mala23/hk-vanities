@@ -1,0 +1,16 @@
+{
+  "plates": [
+    {
+      "text": "a car",
+      "image": "static/plates/a car.jpg"
+    },
+    {
+      "text": "A FAKE",
+      "image": "static/plates/A FAKE.jpg"
+    },
+    {
+      "text": "A GENIUS",
+      "image": "static/plates/A GENIUS.jpg"
+    }
+  ]
+}
