@@ -13,4 +13,5 @@ export const StyledLogo = styled.a`
   line-height: 2rem;
   padding: 1rem;
   cursor: pointer;
+  z-index: 1500;
 `
