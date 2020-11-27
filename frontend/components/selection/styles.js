@@ -20,3 +20,9 @@ export const StyledSelectionImage = styled.img`
     height: 100px;
     background-color: lightgrey;
 `
+
+export const StyledDropZone = styled.div`
+  width: 50px;
+  height: 50px;
+  background: ${props => props.active ? 'grey' : 'transparent'};
+`

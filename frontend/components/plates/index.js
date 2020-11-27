@@ -13,7 +13,7 @@ export default function Plates() {
   return (
     <StyledPlates>
       {data.plates.map((p, i) => (
-      <Plate key={i} plate={p} />
+        <Plate key={i} plate={p} />
       ))}
     </StyledPlates>
   )
