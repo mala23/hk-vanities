@@ -73,7 +73,9 @@ const jpgsToMp4 = async (imgs, opts) => {
         "yuv420p",
         outFile,
       ],
-      {}
+      {
+        stdio: 'inherit',
+      }
     );
     console.log('done')
     const clean = async () => {

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styled from 'styled-components'
-import { useDrag, useDrop  } from 'react-dnd';
-import { ItemTypes  } from '../../lib/ItemTypes';
+import { useDrag, useDrop } from 'react-dnd';
+import { ItemTypes } from '../../lib/ItemTypes';
 import { StyledSelectionPlate, StyledSelectionImage } from './styles'
 
 const SelctionPlate = ({ index, plate, onMove }) => {
