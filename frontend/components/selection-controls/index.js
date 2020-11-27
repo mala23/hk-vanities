@@ -5,7 +5,9 @@ import { StyledControls, StyledControl } from './styles'
 
 const SelectionControls = () => (
   <StyledControls>
-    <StyledControl>Continue</StyledControl>
+    <Link href="/publish">
+      <StyledControl>Continue</StyledControl>
+    </Link>
     <StyledControl>Reset all</StyledControl>
   </StyledControls>
 )
