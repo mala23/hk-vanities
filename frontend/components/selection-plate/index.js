@@ -2,7 +2,7 @@ import Link from 'next/link'
 import styled from 'styled-components'
 import { useDrag, useDrop } from 'react-dnd';
 import { ItemTypes } from '../../lib/ItemTypes';
-import { StyledSelectionPlate, StyledSelectionImage } from './styles'
+import { StyledSelectionPlate, StyledSelectionImage, StyledSelectionCaption } from './styles'
 
 const SelctionPlate = ({ index, plate, onMove }) => {
   const ref = React.useRef()
@@ -24,6 +24,7 @@ const SelctionPlate = ({ index, plate, onMove }) => {
   return (
     <StyledSelectionPlate innerRef={ref}>
       <StyledSelectionImage src={plate.image} alt={plate.text}/>
+        <StyledSelectionCaption>{plate.text}</StyledSelectionCaption>
     </StyledSelectionPlate>
   )
 }
