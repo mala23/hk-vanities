@@ -5,8 +5,6 @@ const cp = require("child_process");
 const util = require("util");
 const uuid = require('uuid').v4
 
-const spawn = util.promisify(cp.spawn);
-
 const tmpDir = process.env.TMP_DIR
 const outDir = process.env.OUT_DIR
 const platesDir = './static/plates'
@@ -14,8 +12,8 @@ const plateToPath = (plate) => path.join(platesDir, `${plate}.jpg`)
 
 export default async function handler(req, res) {
   if (req.method === 'POST') {
-    const res = await fn(req)
-    res.status(200).json(res)
+    const ret = await fn(req)
+    res.status(200).json(ret)
   }
 }
 
@@ -32,8 +30,8 @@ const fn = async (req) => {
   try {
     const publicName = `${plates.map((x) => x.replace(/\W/g, '-')).join('+')}.mp4`
     const publicPath = path.join(outDir, publicName)
-    await fs.cp(outPath, publicPath)
-    return { url: publicName }
+    await fs.copyFile(outPath, publicPath)
+    return { url: `/static/out/${publicName}` }
   } finally {
     await clean()
   }
@@ -56,8 +54,7 @@ const jpgsToMp4 = async (imgs, opts) => {
       await fs.copyFile(img, path.join(outDir, `${i}.jpg`));
       i++;
     }
-    console.log('starting')
-    await spawn(
+    sspawn(
       "ffmpeg",
       [
         "-y",
@@ -76,11 +73,12 @@ const jpgsToMp4 = async (imgs, opts) => {
       {
         stdio: 'inherit',
       }
-    );
+    )
+    await sspawn("sleep", ["1"], {})
     console.log('done')
     const clean = async () => {
       await fs.unlink(outFile)
-      await fs.unlink(outDir)
+      await fs.rmdir(outDir)
     }
     return [outFile, clean];
   } finally {
@@ -91,3 +89,13 @@ const jpgsToMp4 = async (imgs, opts) => {
     }
   }
 };
+
+const sspawn = (...args) => new Promise((res, rej) => {
+  const c = cp.spawn(...args)
+  c.on('error', (err) => {
+    rej(err)
+  })
+  c.on('exit', () => {
+    res()
+  })
+})
