@@ -22,7 +22,13 @@ export const StyledSelectionImage = styled.img`
 `
 
 export const StyledDropZone = styled.div`
-  width: 50px;
-  height: 50px;
+  width: calc(((100vw - 5rem) / 2) - .5rem);
+  height: calc(((100vw - 5rem) / 2) - .5rem);
   background: ${props => props.active ? 'grey' : 'transparent'};
+`
+
+export const StyledSelectionNote = styled.p`
+  position: absolute;
+  text-align: center;
+  margin: 5rem auto 0 auto;
 `

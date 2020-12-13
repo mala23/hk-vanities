@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 import SelectionPlate from '../selection-plate'
-import { StyledSelection, StyledSelectionPlates, StyledSelectionImage, StyledDropZone } from './styles'
+import { StyledSelection, StyledSelectionPlates, StyledSelectionImage, StyledDropZone, StyledSelectionNote } from './styles'
 import { useDrop } from 'react-dnd'
 import { v4 as uuid } from 'uuid'
 
@@ -32,6 +32,20 @@ const Selection  = () => {
     }
     newPlates.splice(newIndex, 0, item)
     setPlates(newPlates)
+  }
+
+  if( plates.length == 0 ) {
+    return (
+      <StyledSelection>
+        <StyledSelectionPlates>
+          <StyledSelectionNote>Drag and drop your selected plates here.</StyledSelectionNote>
+          {plates.map((plate, i) => (
+            <SelectionPlate key={plate.id} index={i} onMove={handleMove} dropable plate={plate}/>
+          ))}
+          <StyledDropZone innerRef={drop} active={canDrop}/>
+        </StyledSelectionPlates>
+      </StyledSelection>
+    )
   }
 
   return (
