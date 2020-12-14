@@ -1,10 +1,15 @@
 import styled from 'styled-components'
+import { device } from '../../lib/device'
 
 export const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 1rem .5rem;
+
+  @media ${device.laptop} {
+    margin: 3rem 3rem;
+  }
 `
 
 export const StyledLogo = styled.a`

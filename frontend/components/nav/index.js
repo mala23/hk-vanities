@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import Link from 'next/link'
 import { slide as Menu  } from 'react-burger-menu'
+import { StyledBurger } from './styles'
 
 var styles = {
   bmBurgerButton: {
