@@ -1,4 +1,4 @@
-const dir = '../static/plates';
+const dir = '../static/thumbnails';
 const fs = require('fs');
 
 const data = []
@@ -7,7 +7,7 @@ fs.readdirSync(dir).forEach(file => {
   if (file.endsWith('.jpg')) {
     var obj = {
       "text": file.replace(/\.[^/.]+$/, ""),
-      "image": "/static/plates/" + file
+      "image": "/static/thumbnails/" + file
     }
     data.push(obj)
   }
