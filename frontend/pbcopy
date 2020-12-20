@@ -49,21 +49,13 @@ class Header extends Component {
     return(
       <StyledHeader>
         <Link href="/">
-        <StyledLogo onClick={() => this.closeMenu()}>HKVANIT1ES</StyledLogo>
+        <StyledLogo onClick={() => Nav.closeMenu()}>HKVANIT1ES</StyledLogo>
         </Link>
         <MediaQuery maxDeviceWidth={1024}>
-          <Nav
-            open={this.state.menuOpen}
-            onClose={() => this.closeMenu()}
-            onStateChange={(props) => this.handleStateChange(props)}
-          />
+          <Nav data={this.state}/>
         </MediaQuery>
         <MediaQuery minDeviceWidth={1024}>
-          <DesktopNav
-            open={this.state.menuOpen}
-            onClose={() => this.closeMenu()}
-            handleStateChange={() => this.stateChange(props)}
-          />
+          <DesktopNav data={this.state}/>
         </MediaQuery>
       </StyledHeader>
     )}
