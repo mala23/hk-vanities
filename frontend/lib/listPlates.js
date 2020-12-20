@@ -1,15 +1,19 @@
-const dir = '../static/plates/'
-const fs = require('fs')
+const dir = '../static/plates';
+const fs = require('fs');
 
-fs.readdir(dir, (err, files) => {
-  files.forEach(file => {
+const data = []
 
-    fs.readFile('../data.json', function (err, data) {
-          var json = JSON.parse(data)
-          json.push(file)
-          fs.writeFile("data.json", JSON.stringify(json))
-    })
-    console.log(file)
-  })
+fs.readdirSync(dir).forEach(file => {
+  if (file.endsWith('.jpg')) {
+    var obj = {
+      "text": file.replace(/\.[^/.]+$/, ""),
+      "image": "/static/plates/" + file
+    }
+    data.push(obj)
+  }
 
-})
+});
+
+fs.writeFileSync("../data/platesData.json", JSON.stringify(data, null, '  '))
+
+console.log(data)
