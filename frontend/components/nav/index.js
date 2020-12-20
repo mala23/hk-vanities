@@ -19,7 +19,6 @@ var styles = {
   },
   bmCrossButton: {
     width: '24px',
-    display: 'none'
   },
   bmCross: {
     background: '#bdc3c7'
