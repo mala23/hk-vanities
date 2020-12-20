@@ -9,7 +9,7 @@ export default async function gallery(req, res) {
     poems: poems
       .filter((g) => g.endsWith('.mp4'))
       .map((g) => ({
-        video: `/static/out/${g}`,
+        video: `/static/out/${encodeURIComponent(g)}`,
         text: g.split('.')[1].replace('+', ' '),
       })),
   })

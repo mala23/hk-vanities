@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import styled from 'styled-components'
 import SelectionPlate from '../selection-plate'
 import { StyledSelection, StyledSelectionPlates, StyledSelectionImage, StyledDropZone, StyledSelectionNote, StyledPlaceholderDropZone } from './styles'
@@ -27,6 +28,13 @@ const Selection  = () => {
   })
   const handleReset = () => {
     setPlates([])
+  }
+  const router = useRouter()
+  const handleContinue = () => {
+    router.push({
+      pathname: '/publish',
+      query: { plates: plates.map((p) => p.text).join(',') },
+    })
   }
 
   const handleMove = (item, oldIndex, newIndex) => {
@@ -56,7 +64,7 @@ const Selection  = () => {
           )}
         </StyledSelectionPlates>
       </StyledSelection>
-      <SelectionControls onReset={handleReset} />
+      <SelectionControls onReset={handleReset} onContinue={handleContinue} />
     </React.Fragment>
   )
 }

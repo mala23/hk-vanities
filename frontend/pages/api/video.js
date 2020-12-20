@@ -75,7 +75,6 @@ const jpgsToMp4 = async (imgs, opts) => {
       }
     )
     await sspawn("sleep", ["1"], {})
-    console.log('done')
     const clean = async () => {
       await fs.unlink(outFile)
       await fs.rmdir(outDir)

@@ -3,11 +3,9 @@ import Link from 'next/link'
 
 import { StyledControls, StyledControl } from './styles'
 
-const SelectionControls = ({ onReset }) => (
+const SelectionControls = ({ onContinue, onReset }) => (
   <StyledControls>
-    <Link href="/publish">
-      <StyledControl>Continue</StyledControl>
-    </Link>
+    <StyledControl button onClick={onContinue}>Continue</StyledControl>
     <StyledControl onClick={onReset}>Reset all</StyledControl>
   </StyledControls>
 )
