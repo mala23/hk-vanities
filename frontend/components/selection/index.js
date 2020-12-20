@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 import SelectionPlate from '../selection-plate'
-import { StyledSelection, StyledSelectionPlates, StyledSelectionImage, StyledDropZone, StyledSelectionNote } from './styles'
+import { StyledSelection, StyledSelectionPlates, StyledSelectionImage, StyledDropZone, StyledSelectionNote, StyledPlaceholderDropZone } from './styles'
 import { useDrop } from 'react-dnd'
 import { v4 as uuid } from 'uuid'
 
@@ -34,27 +34,21 @@ const Selection  = () => {
     setPlates(newPlates)
   }
 
-  if( plates.length == 0 ) {
-    return (
-      <StyledSelection>
-        <StyledSelectionPlates>
-          <StyledSelectionNote>Drag and drop your selected plates here.</StyledSelectionNote>
-          {plates.map((plate, i) => (
-            <SelectionPlate key={plate.id} index={i} onMove={handleMove} dropable plate={plate}/>
-          ))}
-          <StyledDropZone innerRef={drop} active={canDrop}/>
-        </StyledSelectionPlates>
-      </StyledSelection>
-    )
-  }
-
   return (
     <StyledSelection>
       <StyledSelectionPlates>
-        {plates.map((plate, i) => (
-          <SelectionPlate key={plate.id} index={i} onMove={handleMove} dropable plate={plate}/>
-        ))}
-        <StyledDropZone innerRef={drop} active={canDrop}/>
+        {plates.length ? (
+          <React.Fragment>
+            {plates.map((plate, i) => (
+              <SelectionPlate key={plate.id} index={i} onMove={handleMove} dropable plate={plate}/>
+            ))}
+            <StyledDropZone innerRef={drop} active={canDrop}/>
+          </React.Fragment>
+        ) : (
+          <StyledPlaceholderDropZone innerRef={drop} active={canDrop}>
+            <StyledSelectionNote>{'Drag and drop your selected plates here.'}</StyledSelectionNote>
+          </StyledPlaceholderDropZone>
+        )}
       </StyledSelectionPlates>
     </StyledSelection>
   )

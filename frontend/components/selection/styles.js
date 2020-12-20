@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import { device } from '../../lib/device'
 
+const size = '5rem'
+
 export const StyledSelection = styled.section`
   margin: 2rem 0;
 `
@@ -8,8 +10,7 @@ export const StyledSelection = styled.section`
 export const StyledSelectionPlates = styled.section`
   display: flex;
   justify-content: flex-start;
-  overflow: auto;
-  white-space: nowrap;
+  flex-wrap: wrap;
 `
 
 export const StyledSelectionPlate = styled.article`
@@ -23,8 +24,8 @@ export const StyledSelectionImage = styled.img`
 `
 
 export const StyledDropZone = styled.div`
-  width: calc(((100vw - 5rem) / 2) - .5rem);
-  height: calc(((100vw - 5rem) / 2) - .5rem);
+  width: ${size};
+  height: ${size};
   background: ${props => props.active ? 'grey' : 'transparent'};
 
   @media ${device.laptop} {
@@ -33,8 +34,9 @@ export const StyledDropZone = styled.div`
   }
 `
 
+export const StyledPlaceholderDropZone = styled.div`
+`
+
 export const StyledSelectionNote = styled.p`
-  position: absolute;
   text-align: center;
-  margin: 5rem auto 0 auto;
 `

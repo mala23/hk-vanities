@@ -6,8 +6,6 @@ import data from '../../data.json'
 import { StyledPlates } from './styles'
 import Plate from '../plate'
 
-console.log(data.plates)
-
 export default function Plates() {
 
   return (
