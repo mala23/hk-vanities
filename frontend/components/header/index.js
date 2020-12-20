@@ -3,7 +3,9 @@ import Link from 'next/link'
 import styled from 'styled-components'
 import NProgress from 'nprogress'
 import Router from 'next/router'
+import MediaQuery from "react-responsive"
 import Nav from '../nav'
+import DesktopNav from '../desktopnav'
 import { StyledHeader, StyledLogo, StyledNav, StyledNavList, StyledNavToggle } from './styles'
 
 Router.onRouteChangeStart = () => {
@@ -48,7 +50,12 @@ class Header extends Component {
         <Link href="/">
         <StyledLogo onClick={() => this.closeMenu()}>HKVANIT1ES</StyledLogo>
         </Link>
-        <Nav />
+        <MediaQuery maxDeviceWidth={1024}>
+          <Nav />
+        </MediaQuery>
+        <MediaQuery minDeviceWidth={1024}>
+          <DesktopNav />
+        </MediaQuery>
       </StyledHeader>
     )}
 }
