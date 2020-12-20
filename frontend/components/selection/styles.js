@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { device } from '../../lib/device'
 
 export const StyledSelection = styled.section`
   margin: 2rem 0;
@@ -25,6 +26,11 @@ export const StyledDropZone = styled.div`
   width: calc(((100vw - 5rem) / 2) - .5rem);
   height: calc(((100vw - 5rem) / 2) - .5rem);
   background: ${props => props.active ? 'grey' : 'transparent'};
+
+  @media ${device.laptop} {
+    width: calc(((100vw - 5rem) / 4) - 5rem);
+    height: calc(((100vw - 5rem) / 4) - 5rem);
+  }
 `
 
 export const StyledSelectionNote = styled.p`

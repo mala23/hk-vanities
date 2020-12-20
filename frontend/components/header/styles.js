@@ -19,4 +19,9 @@ export const StyledLogo = styled.a`
   padding: 1rem;
   cursor: pointer;
   z-index: 1500;
+  letter-spacing: 1px;
+
+  @media ${device.laptop} {
+    font-size: 4rem;
+  }
 `

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { device } from '../../lib/device'
 
 export const StyledButton = styled.div`
   border: 2px solid black;
@@ -8,4 +9,12 @@ export const StyledButton = styled.div`
   text-align: center;
   line-height: 4.5rem;
   text-transform: uppercase;
+  letter-spacing: .6px;
+  margin: auto;
+  cursor: pointer;
+
+  @media ${device.laptop} {
+    margin: 5rem auto 6rem auto;
+    border: 1px solid black;
+  }
 `

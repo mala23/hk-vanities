@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { device } from '../../lib/device'
 
 export const StyledPlates = styled.section`
   display: flex;
@@ -6,4 +7,8 @@ export const StyledPlates = styled.section`
   flex-wrap: wrap;
   flex-direction: row;
   margin: 2rem 0;
+
+  @media ${device.laptop} {
+    justify-content: space-around;
+  }
 `

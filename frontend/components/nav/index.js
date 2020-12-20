@@ -18,8 +18,8 @@ var styles = {
     background: '#a90000'
   },
   bmCrossButton: {
-    height: '24px',
-    width: '24px'
+    width: '24px',
+    display: 'none'
   },
   bmCross: {
     background: '#bdc3c7'
