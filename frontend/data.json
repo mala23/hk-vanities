@@ -1,0 +1,58 @@
+{
+  "plates": [
+    {
+      "text": "a car",
+      "image": "static/plates/a car.jpg"
+    },
+    {
+      "text": "A FAKE",
+      "image": "static/plates/A FAKE.jpg"
+    },
+    {
+      "text": "a car",
+      "image": "static/plates/a car.jpg"
+    },
+    {
+      "text": "A FAKE",
+      "image": "static/plates/A FAKE.jpg"
+    },
+    {
+      "text": "A GENIUS",
+      "image": "static/plates/A GENIUS.jpg"
+    }
+  ],
+  "poems": [
+    {
+      "text": "poem 1",
+      "video": "static/poems/1.mp4"
+    },
+    {
+      "text": "poem 2",
+      "video": "static/poems/2.mp4"
+    },
+    {
+      "text": "poem 3",
+      "video": "statlc/poems/3.mp4"
+    },
+    {
+      "text": "poem 4",
+      "video": "static/poems/4.mp4"
+    },
+    {
+      "text": "poem 5",
+      "video": "static/poems/5.mp4"
+    },
+    {
+      "text": "poem 6",
+      "video": "static/poems/6.mp4"
+    },
+    {
+      "text": "poem 7",
+      "video": "static/poems/7.mp4"
+    },
+    {
+      "text": "poem 8",
+      "video": "static/poems/8.mp4"
+    }
+  ]
+}
