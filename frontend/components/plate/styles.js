@@ -17,6 +17,8 @@ export const StyledPlateImage = styled.img`
   object-fit: cover;
 
   @media ${device.laptop} {
+    max-width: 300px;
+    max-height: 300px;
     width: calc(((100vw - 20rem) / 4) - 2rem);
     height: calc(((100vw - 20rem) / 4) - 2rem);
   }

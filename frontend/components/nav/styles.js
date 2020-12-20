@@ -49,6 +49,8 @@ export const StyledbmItemList = styled.div`
   color: '#b8b7ad',
   padding: '0.8em',
   margin: '5rem 0',
+  position: 'fixed',
+  top: '0'
 `
 
 export const StyledbmItem = styled.div`

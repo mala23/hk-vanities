@@ -9,6 +9,5 @@ export const StyledPlates = styled.section`
   margin: 2rem 0;
 
   @media ${device.laptop} {
-    justify-content: space-around;
   }
 `

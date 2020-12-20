@@ -9,7 +9,7 @@ var styles = {
     width: '36px',
     height: '30px',
     right: '1rem',
-    top: '1rem'
+    top: '1rem',
   },
   bmBurgerBars: {
     background: '#373a47'
@@ -31,7 +31,9 @@ var styles = {
     background: 'white',
     fontSize: '1.15em',
     margin: '0',
-    width: '100vw'
+    width: '100vw',
+    position: 'fixed',
+    top: '0'
   },
   bmMorphShape: {
     fill: '#373a47'
