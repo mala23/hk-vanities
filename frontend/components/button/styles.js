@@ -19,4 +19,10 @@ export const StyledButton = styled.div`
     margin: 5rem auto 6rem auto;
     border: 1px solid black;
   }
+
+  &:hover {
+    color: red;
+    background-color: hsl(46, 100%, 50%);
+    border: none;
+  }
 `

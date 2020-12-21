@@ -22,6 +22,10 @@ export const StyledPlateImage = styled.img`
     width: calc(((100vw - 20rem) / 4) - 2rem);
     height: calc(((100vw - 20rem) / 4) - 2rem);
   }
+
+  &:hover {
+    outline: .5rem solid hsl(46, 100%, 50%);
+  }
 `
 
 export const StyledPlateCaption = styled.figcaption`

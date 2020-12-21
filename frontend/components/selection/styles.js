@@ -22,11 +22,12 @@ export const StyledSelectionPlate = styled.article`
 `
 
 export const StyledDropZone = styled.div`
+  margin: 1rem 2rem .5rem .5rem;
   width: calc(((100vw - 5rem) / 4) - 5rem);
   height: calc(((100vw - 5rem) / 4) - 5rem);
   max-width: 10rem;
   max-height: 10rem;
-  background: ${props => props.active ? 'grey' : 'transparent'};
+  background: ${props => props.active ? 'hsl(46, 100%, 50%)' : 'transparent'};
 
   @media ${device.laptop} {
     width: calc(((100vw - 5rem) / 4) - 5rem);
