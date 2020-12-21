@@ -65,15 +65,21 @@ class Nav extends Component {
           right
           width={ '100%' }
         >
+          <a>
           <Link href="/create">
             <a onClick={() => this.props.closeMenu()}>Create your poem</a>
           </Link>
+          </a>
+          <a>
           <Link href="/see">
             <a onClick={() => this.props.closeMenu()}>See poems</a>
           </Link>
+          </a>
+          <a>
           <Link href="#">
             <a onClick={() => this.props.closeMenu()}>Follow</a>
           </Link>
+          </a>
         </Menu>
   )}
 }
