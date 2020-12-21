@@ -7,7 +7,8 @@ fs.readdirSync(dir).forEach(file => {
   if (file.endsWith('.jpg')) {
     var obj = {
       "text": file.replace(/\.[^/.]+$/, ""),
-      "image": "/static/thumbnails/" + file
+      "image": "/static/plates/" + file,
+      "thumbnail": "/static/thumbnails/" + file
     }
     data.push(obj)
   }

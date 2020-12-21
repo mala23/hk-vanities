@@ -5,8 +5,12 @@ const cp = require("child_process");
 const util = require("util");
 const uuid = require('uuid').v4
 
+/*
 const tmpDir = process.env.TMP_DIR
 const outDir = process.env.OUT_DIR
+*/
+const tmpDir = './tmp'
+const outDir = './static/out'
 const platesDir = './static/plates'
 const plateToPath = (plate) => path.join(platesDir, `${plate}.jpg`)
 

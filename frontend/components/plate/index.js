@@ -15,7 +15,7 @@ const Plate = ({ plate }) => {
   return (
     <StyledPlate innerRef={drag}>
       <StyledPlateFigure>
-        <StyledPlateImage src={plate.image} alt={plate.text} />
+        <StyledPlateImage src={plate.thumbnail} alt={plate.text} />
         <StyledPlateCaption>{plate.text}</StyledPlateCaption>
       </StyledPlateFigure>
     </StyledPlate>
