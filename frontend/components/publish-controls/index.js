@@ -5,12 +5,16 @@ import { StyledControls, StyledControl } from './styles'
 
 const PublishControls = () => (
   <StyledControls>
+    /*
     <Link href="/preview">
       <StyledControl>Preview</StyledControl>
     </Link>
+    */
     <StyledControl>Share</StyledControl>
     <StyledControl>Save</StyledControl>
+    /*
     <StyledControl>Back</StyledControl>
+    */
   </StyledControls>
 )
 
