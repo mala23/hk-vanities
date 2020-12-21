@@ -15,6 +15,8 @@ export const StyledSelectionImage = styled.img`
   @media ${device.laptop} {
     width: calc(((100vw - 5rem) / 4) - 5rem);
     height: calc(((100vw - 5rem) / 4) - 5rem);
+    max-width: 10rem;
+    max-height: 10rem;
   }
 `
 export const StyledSelectionCaption = styled.figcaption`

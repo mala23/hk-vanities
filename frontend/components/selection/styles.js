@@ -11,26 +11,28 @@ export const StyledSelectionPlates = styled.section`
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+    @media ${device.laptop} {
+      max-height: 20vh;
+      overflow: scroll;
+    }
 `
 
 export const StyledSelectionPlate = styled.article`
   margin: 1rem  1rem 0 0;
 `
 
-export const StyledSelectionImage = styled.img`
-    width: 100px;
-    height: 100px;
-    background-color: lightgrey;
-`
-
 export const StyledDropZone = styled.div`
-  width: ${size};
-  height: ${size};
+  width: calc(((100vw - 5rem) / 4) - 5rem);
+  height: calc(((100vw - 5rem) / 4) - 5rem);
+  max-width: 10rem;
+  max-height: 10rem;
   background: ${props => props.active ? 'grey' : 'transparent'};
 
   @media ${device.laptop} {
     width: calc(((100vw - 5rem) / 4) - 5rem);
     height: calc(((100vw - 5rem) / 4) - 5rem);
+    max-width: 10rem;
+    max-height: 10rem;
   }
 `
 
